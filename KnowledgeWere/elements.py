@@ -41,3 +41,23 @@ from playwright.sync_api import Page,expect
 #     print(your_choice.text_content())
 
 
+def test_Xpath(page:Page):
+    page.goto("https://www.knowledgeware.in/Automation/web.html")
+
+    salary_elements=page.locator('//tr/td[3]')
+    salary_text=salary_elements.all_text_contents()
+    print("all salary are now in salary_text....")
+    max_sal=0
+
+    for sal in salary_text:
+        sal=float(sal)
+        if sal>max_sal:
+            max_sal=sal
+    print("We found the max salary....")
+    max_salary_text = f"{max_sal:.2f}"
+    print("we convert sal into text again from int")
+
+    page.locator(f"//td[text()='{max_salary_text}']/../td[5]").click()
+    print("we clicked on the read more...")
+    page.pause()
+    
