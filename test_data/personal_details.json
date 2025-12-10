@@ -1,0 +1,27 @@
+{
+    "personal_details": {
+      "employee_full_name": {
+        "first_name": "Ritik",
+        "middle_name": "Kumar",
+        "last_name": "Ranjan"
+      },
+      "employee_id": "099",
+      "other_id": "emp03",
+      "drivers_license_number": "G87898689",
+      "license_expiry_date": "2030-11-22",
+      "nationality": "Indian",
+      "marital_status": "Single",
+      "date_of_birth": "2002-04-12",
+      "gender": "Male"
+    },
+    "custom_fields": {
+      "blood_type": "other_id+",
+      "test_field": "445"
+    },
+    "attachment": {
+      "file_name": "test.png",
+      "description": "test file upload",
+      "file_path": "assets/test.png"
+    }
+  }
+  

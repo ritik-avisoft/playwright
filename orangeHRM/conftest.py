@@ -7,12 +7,11 @@ def login(page:Page):
 
     #using Xpath
     username=page.wait_for_selector('//input[@name="username"]')
-    username.type("Admin")
+    username.type("Admin", delay=100)
 
     password=page.wait_for_selector('//input[@placeholder="Password"]')
-    password.type("admin123")
+    password.type("admin123",delay=100)
 
     page.wait_for_selector('//button[@type="submit"]').click()
     print("->> Login Successfully..")
-    page.wait_for_timeout(3000)
     return page
