@@ -11,7 +11,7 @@ def test_standard_user_add_to_cart(test_login_user, page: Page):
     expect(product_page.cart_count).to_be_visible()
     # Assert correct item count
     expect(product_page.cart_count).to_have_text("3")
-    print("Products added successfully")
+    print("\nProducts added successfully")
 
 
 def test_sort_product(test_login_user, page: Page):
