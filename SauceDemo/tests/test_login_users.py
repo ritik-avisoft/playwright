@@ -3,7 +3,7 @@ from pages.login_page import login
 from pages.product_page import Product
 from utils.test_data import Test_data as td
 
-def test_login_user(open_app, page:Page):
+def login_standard_user(open_app, page:Page):
     product_page=Product(page)
     login_page = login(open_app)
     login_page.logged_in(td.USERS[0], td.PASSWORD)

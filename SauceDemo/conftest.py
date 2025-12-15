@@ -11,9 +11,26 @@ def open_app(page):
     return page
 
 @pytest.fixture
-def test_login_user(open_app):
-    lp = login(open_app)
-    lp.logged_in(td.USERS[0], td.PASSWORD)
+def login_standard_user(open_app):
+    login(open_app).logged_in(td.USERS[0], td.PASSWORD)
+    return open_app
+
+@pytest.fixture
+def login_locked_user(open_app):
+    login(open_app).logged_in(td.USERS[1], td.PASSWORD)
+    return open_app
+
+@pytest.fixture
+def login_problem_user(open_app):
+    login(open_app).logged_in(td.USERS[2], td.PASSWORD)
+    return open_app
+
+@pytest.fixture
+def login_performance_glitch_user(open_app):
+    login(open_app).logged_in(td.USERS[3], td.PASSWORD)
+    return open_app
+
+
 
 # @pytest.fixture
 # def cart_ready(page):
