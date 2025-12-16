@@ -13,13 +13,22 @@ class Cart:
         self.cart_back_to_shopping_button=page.locator(".btn btn_secondary.back.btn_medium")
         self.cart_finish_btn=page.locator('id=finish')
         self.cart_order_complete=page.get_by_text("Thank you for your order!")
+
+        self.f_name=self.page.get_by_placeholder("First Name")
+        self.l_name=self.page.get_by_placeholder("Last Name")
+        self.zip=self.page.get_by_placeholder("Zip/Postal Code")
+        self.continue_order_btn=self.page.locator('id=continue')
+
+        self.err_msg_container=self.page.locator(".error-message-container.error")
+       
         
 
     def your_info(self, first_name:str, last_name:str, zip:str):
-        self.f_name=self.page.get_by_placeholder("First Name").type(first_name,delay=200)
-        self.l_name=self.page.get_by_placeholder("Last Name").type(last_name,delay=200)
-        self.zip=self.page.get_by_placeholder("Zip/Postal Code").type(zip, delay=200)
-        self.continue_button=self.page.locator('id=continue').click()
+        self.f_name.type(first_name,delay=200)
+        self.l_name.type(last_name,delay=200)
+        self.zip.type(zip, delay=200)
+        # self.continue_button.click()
+        # self.err_msg_container=self.page.locator(".error-message-container.error")
         return self.page
     
     def order_overview(self):
@@ -56,4 +65,3 @@ class Cart:
 
         print(f"Order total verified: ${displayed_total}")
 
-                

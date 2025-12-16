@@ -34,6 +34,7 @@ def test_standred_user_order_confirmation(login_standard_user,page:Page):
     cart_page.cart_checkout_button.click()
     #call method to fill details 
     cart_page.your_info("Ritik", "Ranjan", "450054")
+    cart_page.continue_order_btn.click()
     #confirming the order amount
     cart_page.order_overview()
     #order placing

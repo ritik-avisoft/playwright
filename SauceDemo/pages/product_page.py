@@ -33,6 +33,7 @@ class Product:
     
         #cart icon loc make sure to assert this 
         self.cart_icon=page.locator(".shopping_cart_link")
+        self.cart_icon_for_visual_user=page.locator("id=shopping_cart_container")
         #cartcount locator 
         self.cart_count=page.locator(".shopping_cart_badge")
         #locator to sort product
@@ -41,12 +42,12 @@ class Product:
         self.product_title_name=page.locator(".inventory_item_name ")
         #product img 
         self.product_img=page.locator("img.inventory_item_img")
-    
+        #burger button 
+        self.burger_menu=page.locator('.bm-burger-button')
+
     def validate_products_page_loaded(self):
         expect(self.Product_title).to_be_visible()
         print("You are on Product Page...")
-
-    
 
     def add_to_cart(self,product_name:str):
     
@@ -63,7 +64,7 @@ class Product:
         # Apply sorting
         self.sort_product.select_option(sort_by)
 
-        # Wait for UI to settle
+        # Wait for UI to settle , it's also pause the script unitll the ui settled(no req for atleast 500ms)
         self.page.wait_for_load_state("networkidle")
 
         if sort_by in ["az", "za"]:
@@ -124,3 +125,6 @@ class Product:
             f"Expected all product images to be the same, "
             f"but found {len(unique_images)} different images"
         )
+    
+    # def compare_price_on_inventort_and_product_price(self,actual_price:str):
+    #     self.page.locator(f"")

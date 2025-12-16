@@ -2,8 +2,11 @@ from playwright.sync_api import Page,expect
 from pages.product_page import Product
 from pages.cart_page import Cart
 
-def test_standard_user_add_to_cart(login_performance_glitch_user, page: Page):
+def test_performance_glitch_user_add_to_cart(login_performance_glitch_user, page: Page):
     product_page = Product(page)
+    expect(page).to_have_url("https://www.saucedemo.com/inventory.html", timeout=10000)
+    expect(page.get_by_text("Products")).to_be_visible(timeout=15000)
+
     product_page.add_to_cart('tshirt')
     product_page.add_to_cart('bike')
     product_page.add_to_cart('backpack')
@@ -16,10 +19,10 @@ def test_standard_user_add_to_cart(login_performance_glitch_user, page: Page):
 
 def test_sort_product(login_performance_glitch_user, page: Page):
     product_page = Product(page)
-    product_page.sort_product_by("lohi")
+    product_page.sort_product_by("hilo")
 
     
-def test_standred_user_order_confirmation(login_performance_glitch_user,page:Page):
+def test_performance_glitch_user_order_confirmation(login_performance_glitch_user,page:Page):
     product_page=Product(page)
     cart_page=Cart(page)
 
@@ -33,6 +36,7 @@ def test_standred_user_order_confirmation(login_performance_glitch_user,page:Pag
     cart_page.cart_checkout_button.click()
     #call method to fill details 
     cart_page.your_info("Ritik", "Ranjan", "450054")
+    cart_page.continue_order_btn.click()
     #confirming the order amount
     cart_page.order_overview()
     #order placing

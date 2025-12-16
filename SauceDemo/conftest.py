@@ -25,11 +25,21 @@ def login_problem_user(open_app):
     login(open_app).logged_in(td.USERS[2], td.PASSWORD)
     return open_app
 
+
 @pytest.fixture
 def login_performance_glitch_user(open_app):
     login(open_app).logged_in(td.USERS[3], td.PASSWORD)
     return open_app
 
+@pytest.fixture
+def login_error_user(open_app):
+    login(open_app).logged_in(td.USERS[4], td.PASSWORD)
+    return open_app
+
+@pytest.fixture
+def login_visual_user(open_app):
+    login(open_app).logged_in(td.USERS[5], td.PASSWORD)
+    return open_app
 
 
 # @pytest.fixture
