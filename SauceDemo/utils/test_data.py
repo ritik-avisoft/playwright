@@ -1,13 +1,23 @@
 class Test_data:
-    USERS = [
-        "standard_user",
-        "locked_out_user",
-        "problem_user",
-        "performance_glitch_user",
-        "error_user",
-        "visual_user"
-    ]
-    PASSWORD = "secret_sauce"
+    # USERS = [
+    #     "standard_user",
+    #     "locked_out_user",
+    #     "problem_user",
+    #     "performance_glitch_user",
+    #     "error_user",
+    #     "visual_user"
+    # ]
+    
+    USERS = {
+    "standard": "standard_user",
+    "locked": "locked_out_user",
+    "problem": "problem_user",
+    "performance": "performance_glitch_user",
+    "error": "error_user",
+    "visual": "visual_user"
+    }
+
+    PASSWORD_ENCRYPTED = "gAAAAABpQjwiyIXGhazYSh15l4HArEd_UvTSxRN4N8rLuqsryO6SCPZtNkl-xRSo6ydLbvJK5VrD-3sdNXTDwR3LeoBO1Iqeqg=="
 
     PRODUCTS = {
         "backpack": {

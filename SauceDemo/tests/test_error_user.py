@@ -2,17 +2,19 @@ from playwright.sync_api import Page,expect
 from pages.product_page import Product
 from pages.cart_page import Cart
 
-# def test_error_user_sort_shows_alert(login_error_user, page):
-#     product_page = Product(page)
-#     def dialog_handler(dialog):
-#         assert "Sorting is broken! This error has been reported to Backtrace." in dialog.message
-#         dialog.accept()
+def test_error_user_sort_shows_alert(login_user, page):
+    login_user("error")
+    product_page = Product(page)
+    def dialog_handler(dialog):
+        assert "Sorting is broken! This error has been reported to Backtrace." in dialog.message
+        dialog.accept()
 
-#     page.on("dialog", dialog_handler)
+    page.on("dialog", dialog_handler)
 
-#     product_page.sort_product.select_option("lohi")
+    product_page.sort_product.select_option("lohi")
 
-def test_order_place(login_error_user,page:Page):
+def test_order_place(login_user,page:Page):
+    login_user("error")
     product_page=Product(page)
     cart_page=Cart(page)
 
@@ -35,6 +37,13 @@ def test_order_place(login_error_user,page:Page):
 
     cart_page.continue_order_btn.click()
 
+    #confirming the order amount
+    cart_page.order_overview()
+    #order placing
+    expect(cart_page.cart_finish_btn).to_be_visible()
 
+    # cart_page.cart_finish_btn.click()
+    #asserting that order is confirmed.
+## --------- getting err --------------
     # expect(cart_page.err_msg_container).to_be_visible()
     # expect(cart_page.err_msg_container).to_contain_text("Error: Last Name is required")

@@ -1,7 +1,5 @@
-from playwright.sync_api import Page,expect
 import pytest
 from pages.login_page import login
-from pages.product_page import Product
 from utils.test_data import Test_data as td
 
 
@@ -11,43 +9,9 @@ def open_app(page):
     return page
 
 @pytest.fixture
-def login_standard_user(open_app):
-    login(open_app).logged_in(td.USERS[0], td.PASSWORD)
-    return open_app
-
-@pytest.fixture
-def login_locked_user(open_app):
-    login(open_app).logged_in(td.USERS[1], td.PASSWORD)
-    return open_app
-
-@pytest.fixture
-def login_problem_user(open_app):
-    login(open_app).logged_in(td.USERS[2], td.PASSWORD)
-    return open_app
-
-
-@pytest.fixture
-def login_performance_glitch_user(open_app):
-    login(open_app).logged_in(td.USERS[3], td.PASSWORD)
-    return open_app
-
-@pytest.fixture
-def login_error_user(open_app):
-    login(open_app).logged_in(td.USERS[4], td.PASSWORD)
-    return open_app
-
-@pytest.fixture
-def login_visual_user(open_app):
-    login(open_app).logged_in(td.USERS[5], td.PASSWORD)
-    return open_app
-
-
-# @pytest.fixture
-# def cart_ready(page):
-#     lp = login(page)
-#     lp.logged_in(td.USERS[0], td.PASSWORD)
-#     pp = Product(page)
-#     pp.add_to_cart("tshirt")
-#     pp.add_to_cart("bike")
-#     pp.add_to_cart("backpack")
-#     return page
+def login_user(open_app):
+    def _login(user_key: str):
+        username = td.USERS[user_key]
+        login(open_app).logged_in(username, td.PASSWORD_ENCRYPTED)
+        return open_app
+    return _login

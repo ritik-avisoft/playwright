@@ -3,7 +3,8 @@ from pages.product_page import Product
 from utils.test_data import Test_data as td
 
 
-def test_add_and_remove_products(login_problem_user, page: Page):
+def test_add_and_remove_products(login_user, page: Page):
+    login_user("problem")
     product = Product(page)
     product.validate_products_page_loaded()
 

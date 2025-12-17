@@ -2,7 +2,9 @@ from playwright.sync_api import Page,expect
 from pages.product_page import Product
 from pages.cart_page import Cart
 
-def test_performance_glitch_user_add_to_cart(login_performance_glitch_user, page: Page):
+def test_performance_glitch_user_add_to_cart(login_user, page: Page):
+    login_user("performance")
+
     product_page = Product(page)
     expect(page).to_have_url("https://www.saucedemo.com/inventory.html", timeout=10000)
     expect(page.get_by_text("Products")).to_be_visible(timeout=15000)
@@ -17,12 +19,16 @@ def test_performance_glitch_user_add_to_cart(login_performance_glitch_user, page
     print("\nProducts added successfully")
 
 
-def test_sort_product(login_performance_glitch_user, page: Page):
+def test_sort_product(login_user, page: Page):
+    login_user("performance")
+    
     product_page = Product(page)
     product_page.sort_product_by("hilo")
 
     
-def test_performance_glitch_user_order_confirmation(login_performance_glitch_user,page:Page):
+def test_performance_glitch_user_order_confirmation(login_user,page:Page):
+    login_user("performance")
+
     product_page=Product(page)
     cart_page=Cart(page)
 

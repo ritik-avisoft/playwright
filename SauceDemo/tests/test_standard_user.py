@@ -2,7 +2,9 @@ from playwright.sync_api import Page,expect
 from pages.product_page import Product
 from pages.cart_page import Cart
 
-def test_standard_user_add_to_cart(login_standard_user, page: Page):
+def test_standard_user_add_to_cart(login_user, page: Page):
+    login_user("standard")
+    
     product_page = Product(page)
     product_page.add_to_cart('tshirt')
     product_page.add_to_cart('bike')
@@ -13,14 +15,13 @@ def test_standard_user_add_to_cart(login_standard_user, page: Page):
     expect(product_page.cart_count).to_have_text("3")
     print("\nProducts added successfully")
 
-
-def test_sort_product(login_standard_user, page: Page):
+def test_sort_product(login_user, page: Page):
+    login_user("standard")
     product_page = Product(page)
     product_page.sort_product_by("lohi")
-
-
     
-def test_standred_user_order_confirmation(login_standard_user,page:Page):
+def test_standred_user_order_confirmation(login_user,page:Page):
+    login_user("standard")
     product_page=Product(page)
     cart_page=Cart(page)
 
