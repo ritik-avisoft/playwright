@@ -47,7 +47,7 @@ class Product:
 
     def validate_products_page_loaded(self):
         expect(self.Product_title).to_be_visible()
-        print("You are on Product Page...")
+        # print("You are on Product Page...")
 
     def add_to_cart(self,product_name:str):
     

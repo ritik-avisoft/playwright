@@ -5,6 +5,8 @@ from pages.cart_page import Cart
 def test_error_user_sort_shows_alert(login_user, page):
     login_user("error")
     product_page = Product(page)
+
+    #asserting that dialog appear for error user
     def dialog_handler(dialog):
         assert "Sorting is broken! This error has been reported to Backtrace." in dialog.message
         dialog.accept()
@@ -18,6 +20,7 @@ def test_order_place(login_user,page:Page):
     product_page=Product(page)
     cart_page=Cart(page)
 
+    #Adding product's to cart 
     product_page.add_to_cart('bike')
     product_page.add_to_cart('backpack')
     expect(product_page.cart_count,"Your Cart is Empty !!").to_be_attached()
