@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite time="21.5181303024292" tests='5' skipped='0'
+name="Cart" failures='0' errors='0'><testcase time="4.279213190078735" name="Verify_Add_Item_To_Cart_--_@1.2_" status="passed"
+         classname="Cart_Process" >
+            <system-out>
+            <![CDATA[
+            @scenario.begin
+                @add_to_cart
+                scenario: verify add item to cart -- @1.2 
+                given User on the login page ... passed in 0.7073s 
+                when "standard" user enter correct login credentials ... passed in 3.44s 
+                then User should be on product page ... passed in 0.01223s 
+e                given add "backpack" in the cart ... passed in 0.02964s 
+                when user clicked on cart icon ... passed in 0.06871s 
+                when "backpack" should be visible in the cart ... passed in 0.02161s 
+@scenario.end
+            ----------------------------------------------------------------------------------------------------
+            ]]>
+            </system-out>
+        </testcase><testcase time="4.838136196136475" name="Verify_Add_Item_To_Cart_--_@1.1_" status="passed"
+         classname="Cart_Process" >
+            <system-out>
+            <![CDATA[
+            @scenario.begin
+                @add_to_cart
+                scenario: verify add item to cart -- @1.1 
+                given User on the login page ... passed in 1.455s 
+                when "standard" user enter correct login credentials ... passed in 3.252s 
+                then User should be on product page ... passed in 0.01843s 
+e                given add "bike" in the cart ... passed in 0.03118s 
+                when user clicked on cart icon ... passed in 0.0615s 
+                when "bike" should be visible in the cart ... passed in 0.02044s 
+@scenario.end
+            ----------------------------------------------------------------------------------------------------
+            ]]>
+            </system-out>
+        </testcase><testcase time="4.090616226196289" name="Verify_Add_Item_To_Cart_--_@1.3_" status="passed"
+         classname="Cart_Process" >
+            <system-out>
+            <![CDATA[
+            @scenario.begin
+                @add_to_cart
+                scenario: verify add item to cart -- @1.3 
+                given User on the login page ... passed in 0.7254s 
+                when "standard" user enter correct login credentials ... passed in 3.191s 
+                then User should be on product page ... passed in 0.0231s 
+e                given add "tshirt" in the cart ... passed in 0.05368s 
+                when user clicked on cart icon ... passed in 0.06262s 
+                when "tshirt" should be visible in the cart ... passed in 0.03453s 
+@scenario.end
+            ----------------------------------------------------------------------------------------------------
+            ]]>
+            </system-out>
+        </testcase><testcase time="4.154454708099365" name="Verify_Remove_Item_From_Cart" status="passed"
+         classname="Cart_Process" >
+            <system-out>
+            <![CDATA[
+            @scenario.begin
+                @remove_from_cart
+                scenario: verify remove item from cart
+                given User on the login page ... passed in 0.7289s 
+                when "standard" user enter correct login credentials ... passed in 3.189s 
+                then User should be on product page ... passed in 0.02509s 
+e                given add "bike" in the cart ... passed in 0.05402s 
+                given add "tshirt" in the cart ... passed in 0.03864s 
+                when user clicked on cart icon ... passed in 0.06614s 
+                when products are visible ... passed in 0.03159s 
+                then user remove "bike" from the cart ... passed in 0.02106s 
+@scenario.end
+            ----------------------------------------------------------------------------------------------------
+            ]]>
+            </system-out>
+        </testcase><testcase time="4.155709981918335" name="Verify_Checkout_Process" status="passed"
+         classname="Cart_Process" >
+            <system-out>
+            <![CDATA[
+            @scenario.begin
+                @checkout
+                scenario: verify checkout process
+                given User on the login page ... passed in 0.7331s 
+                when "standard" user enter correct login credentials ... passed in 3.184s 
+                then User should be on product page ... passed in 0.02316s 
+e                given add "bike" in the cart ... passed in 0.03237s 
+                given add "tshirt" in the cart ... passed in 0.04567s 
+                when user clicked on cart icon ... passed in 0.0666s 
+                when products are visible ... passed in 0.0375s 
+                when user clicked on checkout ... passed in 0.02719s 
+                then user on checkout information page ... passed in 0.00631s 
+@scenario.end
+            ----------------------------------------------------------------------------------------------------
+            ]]>
+            </system-out>
+        </testcase></testsuite>

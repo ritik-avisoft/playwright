@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite time="3.7338452339172363" tests='1' skipped='0'
+name="Product" failures='0' errors='0'><testcase time="3.7338452339172363" name="Product_Listing_Verification" status="passed"
+         classname="Product_Page" >
+            <system-out>
+            <![CDATA[
+            @scenario.begin
+                @product_test   @wip
+                scenario: Product listing verification
+                given User on the login page ... passed in 0.5601s 
+                when "standard" user enter correct login credentials ... passed in 3.161s 
+                then User should be on product page ... passed in 0.01273s 
+e@scenario.end
+            ----------------------------------------------------------------------------------------------------
+            ]]>
+            </system-out>
+        </testcase></testsuite>

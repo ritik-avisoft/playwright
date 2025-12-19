@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite time="26.142911195755005" tests='6' skipped='0'
+name="Login" failures='0' errors='0'><testcase time="1.2900769710540771" name="Verify_Locked_Out_User_Login" status="passed"
+         classname="Login" >
+            <system-out>
+            <![CDATA[
+            @scenario.begin
+                @locked-out
+                scenario: verify locked out user login
+e                given User on the login page ... passed in 0.9057s 
+                when If "locked" user enter correct login credentials ... passed in 0.3291s 
+                then User should see a locked out error message ... passed in 0.05527s 
+@scenario.end
+            ----------------------------------------------------------------------------------------------------
+            ]]>
+            </system-out>
+        </testcase><testcase time="2.3735997676849365" name="Verify_Incorrect_Login" status="passed"
+         classname="Login" >
+            <system-out>
+            <![CDATA[
+            @scenario.begin
+                @incorrect-login
+                scenario: verify incorrect login
+e                given User on the login page ... passed in 0.8261s 
+                when "standard" user enter valid username and incorrect password ... passed in 1.498s 
+                then User should see an error message ... passed in 0.04964s 
+@scenario.end
+            ----------------------------------------------------------------------------------------------------
+            ]]>
+            </system-out>
+        </testcase><testcase time="4.315804719924927" name="Verify_Valid_User_Login_--_@1.2_" status="passed"
+         classname="Login" >
+            <system-out>
+            <![CDATA[
+            @scenario.begin
+                @all_valid_user_login
+                scenario: Verify valid user login -- @1.2 
+e                given User on the login page ... passed in 0.823s 
+                when correct credentials entered by "problem" ... passed in 3.458s 
+                then User should be on product page ... passed in 0.03528s 
+@scenario.end
+            ----------------------------------------------------------------------------------------------------
+            ]]>
+            </system-out>
+        </testcase><testcase time="4.326242923736572" name="Verify_User_Login" status="passed"
+         classname="Login" >
+            <system-out>
+            <![CDATA[
+            @scenario.begin
+                @correct-login
+                scenario: verify user login
+e                given User on the login page ... passed in 0.8442s 
+                when "standard" user enter correct login credentials ... passed in 3.443s 
+                then User should be on product page ... passed in 0.03877s 
+@scenario.end
+            ----------------------------------------------------------------------------------------------------
+            ]]>
+            </system-out>
+        </testcase><testcase time="4.366352796554565" name="Verify_Valid_User_Login_--_@1.1_" status="passed"
+         classname="Login" >
+            <system-out>
+            <![CDATA[
+            @scenario.begin
+                @all_valid_user_login
+                scenario: Verify valid user login -- @1.1 
+e                given User on the login page ... passed in 0.988s 
+                when correct credentials entered by "standard" ... passed in 3.348s 
+                then User should be on product page ... passed in 0.03024s 
+@scenario.end
+            ----------------------------------------------------------------------------------------------------
+            ]]>
+            </system-out>
+        </testcase><testcase time="9.470834016799927" name="Verify_Valid_User_Login_--_@1.3_" status="passed"
+         classname="Login" >
+            <system-out>
+            <![CDATA[
+            @scenario.begin
+                @all_valid_user_login
+                scenario: Verify valid user login -- @1.3 
+e                given User on the login page ... passed in 0.8256s 
+                when correct credentials entered by "performance" ... passed in 8.623s 
+                then User should be on product page ... passed in 0.02262s 
+@scenario.end
+            ----------------------------------------------------------------------------------------------------
+            ]]>
+            </system-out>
+        </testcase></testsuite>

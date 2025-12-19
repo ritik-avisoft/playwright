@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite time="7.640709161758423" tests='1' skipped='0'
+name="Order_Place" failures='0' errors='0'><testcase time="7.640709161758423" name="Verify_Order_Place_Process" status="passed"
+         classname="Order_Place" >
+            <system-out>
+            <![CDATA[
+            @scenario.begin
+                @order_place
+                scenario: verify order place process
+                given User on the login page ... passed in 0.5555s 
+                when "standard" user enter correct login credentials ... passed in 3.165s 
+                then User should be on product page ... passed in 0.01499s 
+e                given add "bike" in the cart ... passed in 0.03559s 
+                given add "tshirt" in the cart ... passed in 0.04229s 
+                when user clicked on cart icon ... passed in 0.08007s 
+                when products are visible ... passed in 0.01886s 
+                when user clicked on checkout ... passed in 0.02501s 
+                when user enter the shipping information ... passed in 3.65s 
+                then user should be able to place the order ... passed in 0.05323s 
+@scenario.end
+            ----------------------------------------------------------------------------------------------------
+            ]]>
+            </system-out>
+        </testcase></testsuite>
